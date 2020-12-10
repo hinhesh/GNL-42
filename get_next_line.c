@@ -12,6 +12,20 @@
 
 #include "get_next_line.h"
 
+int		find_char(char *str)
+{
+	int	i;
+
+	if (str == NULL)
+		return (-1);
+	i = 0;
+	while (str[i] != '\0' && str[i] != 10)
+		i++;
+	if (str[i] == '\0')
+		return (-1);
+	return (1);
+}
+
 void	ft_read_line(t_list *ptn)
 {
 	char	buf[BUFFER_SIZE + 1];
@@ -21,7 +35,7 @@ void	ft_read_line(t_list *ptn)
 	{
 		buf[i] = 0;
 		ptn->chain = ft_strjoin(ptn->chain, buf);
-		if (i == 0)
+		if (i == 0 || find_char(ptn->chain) == 1)
 			break ;
 	}
 }
@@ -34,7 +48,10 @@ t_list	*ft_list(t_list **list, int fd)
 	while (ptn)
 	{
 		if (ptn->fd == fd)
+		{
+			ft_read_line(ptn);
 			return (ptn);
+		}
 		ptn = ptn->next;
 	}
 	if (!(ptn = (t_list *)malloc(sizeof(t_list))))

@@ -32,4 +32,5 @@ char			*ft_split_gnl(char **buffer, int stop);
 char			*ft_strdup(char *src);
 void			ft_free(t_list *ptn);
 int				get_next_line(int fd, char **line);
+int				find_char(char *str);
 #endif
