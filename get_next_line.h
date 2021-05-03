@@ -6,7 +6,7 @@
 /*   By: how-choongines <marvin@42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 14:39:59 by how-choon         #+#    #+#             */
-/*   Updated: 2020/12/10 14:40:02 by how-choon        ###   ########.fr       */
+/*   Updated: 2021/05/03 15:36:02 by how-choon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_H
 # include <unistd.h>
 # include <stdlib.h>
-
+# define BUFFER_SIZE 50
 typedef struct	s_list
 {
 	int				fd;
